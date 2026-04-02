@@ -17,7 +17,7 @@ body {
   position: relative;
 }
 
-/* stars */
+/* ⭐ STARS */
 .stars {
   position: fixed;
   inset: 0;
@@ -46,14 +46,11 @@ body {
 }
 
 @keyframes drift {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(70px);
-  }
+  from { transform: translateY(0); }
+  to { transform: translateY(70px); }
 }
 
+/* 🧱 LAYOUT */
 .container {
   min-height: 100vh;
   display: flex;
@@ -66,6 +63,7 @@ body {
   z-index: 1;
 }
 
+/* ✨ INSTRUCTION */
 .instruction {
   margin: 0 0 28px;
   font-size: 1.2rem;
@@ -73,7 +71,6 @@ body {
   color: #f2dce6;
   opacity: 0;
   animation: fadeInUp 1.4s ease forwards;
-  letter-spacing: 0.3px;
 }
 
 .instruction span {
@@ -81,7 +78,7 @@ body {
   color: #cfb8c2;
 }
 
-/* cake area */
+/* 🎂 CAKE */
 .cake-scene {
   opacity: 0;
   animation: fadeInUp 1.6s ease forwards;
@@ -102,8 +99,12 @@ body {
   transform: translateX(-50%);
   font-size: 1.2rem;
   color: #ffe8f0;
-  letter-spacing: 0.4px;
   text-shadow: 0 0 14px rgba(255, 220, 235, 0.25);
+  opacity: 0;
+}
+
+.show-happy {
+  opacity: 1;
   animation: fadeInUp 1.2s ease forwards;
 }
 
@@ -111,19 +112,16 @@ body {
   position: relative;
   width: 260px;
   height: 265px;
-  transition: filter 0.8s ease, transform 0.5s ease;
-  animation: floatCake 3.2s ease-in-out infinite;
+  animation: floatCake 3s ease-in-out infinite;
+  transition: 0.5s;
 }
 
 @keyframes floatCake {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-7px);
-  }
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
+/* layers */
 .plate {
   position: absolute;
   bottom: 4px;
@@ -131,9 +129,8 @@ body {
   transform: translateX(-50%);
   width: 240px;
   height: 22px;
-  background: rgba(255, 240, 246, 0.13);
+  background: rgba(255,240,246,0.13);
   border-radius: 50%;
-  box-shadow: 0 0 24px rgba(255, 210, 228, 0.08);
 }
 
 .layer {
@@ -148,7 +145,6 @@ body {
   width: 190px;
   height: 82px;
   background: #eaa1b6;
-  box-shadow: 0 8px 30px rgba(240, 164, 184, 0.16);
 }
 
 .layer-middle {
@@ -165,35 +161,18 @@ body {
   background: #f6c9d5;
 }
 
-.icing-1,
-.icing-2,
-.icing-3 {
+/* icing */
+.icing-1, .icing-2, .icing-3 {
   position: absolute;
   background: #fff4f8;
   border-radius: 20px;
 }
 
-.icing-1 {
-  width: 24px;
-  height: 34px;
-  left: 103px;
-  bottom: 141px;
-}
+.icing-1 { width:24px; height:34px; left:103px; bottom:141px; }
+.icing-2 { width:20px; height:28px; left:124px; bottom:136px; }
+.icing-3 { width:22px; height:30px; left:143px; bottom:140px; }
 
-.icing-2 {
-  width: 20px;
-  height: 28px;
-  left: 124px;
-  bottom: 136px;
-}
-
-.icing-3 {
-  width: 22px;
-  height: 30px;
-  left: 143px;
-  bottom: 140px;
-}
-
+/* candle */
 .candle {
   position: absolute;
   left: 50%;
@@ -210,9 +189,9 @@ body {
     #e5a3b8 6px,
     #e5a3b8 12px
   );
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
 }
 
+/* flame */
 .flame {
   position: absolute;
   top: -24px;
@@ -221,44 +200,33 @@ body {
   width: 16px;
   height: 26px;
   background: radial-gradient(circle at 50% 30%, #fff3aa 0%, #ffd256 45%, #ff9a1f 100%);
-  border-radius: 50% 50% 45% 45%;
-  box-shadow:
-    0 0 20px rgba(255, 180, 70, 0.95),
-    0 0 40px rgba(255, 170, 90, 0.28);
-  animation: flicker 0.18s infinite alternate;
+  border-radius: 50%;
+  box-shadow: 0 0 20px orange;
+  animation: flicker 0.2s infinite alternate;
 }
 
 @keyframes flicker {
-  from {
-    transform: translateX(-50%) scale(1) rotate(-2deg);
-    opacity: 0.92;
-  }
-  to {
-    transform: translateX(-50%) scale(1.08) rotate(2deg);
-    opacity: 1;
-  }
+  from { transform: translateX(-50%) scale(1); }
+  to { transform: translateX(-50%) scale(1.1); }
 }
 
+/* ✍️ HANDWRITING */
 .note-card {
   width: min(90vw, 470px);
   margin-top: 34px;
   padding: 16px;
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.06);
   backdrop-filter: blur(8px);
-  box-shadow:
-    0 16px 40px rgba(0, 0, 0, 0.38),
-    0 0 24px rgba(255, 220, 235, 0.04);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4);
 }
 
 .note {
   width: 100%;
-  display: block;
   border-radius: 14px;
-  filter: brightness(1.08) contrast(1.03);
 }
 
+/* hidden logic */
 .hidden {
   display: none;
 }
@@ -268,20 +236,12 @@ body {
   animation: fadeInUp 1.5s ease forwards;
 }
 
-.show-happy {
-  display: block;
-}
-
+/* glow after click */
 .glow {
-  filter:
-    drop-shadow(0 0 28px rgba(255, 210, 230, 0.14))
-    drop-shadow(0 0 50px rgba(255, 185, 210, 0.08));
+  filter: drop-shadow(0 0 25px pink);
 }
 
-.clicked-text {
-  opacity: 0.92;
-}
-
+/* animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -290,31 +250,5 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@media (max-width: 600px) {
-  .instruction {
-    font-size: 1.05rem;
-    max-width: 290px;
-  }
-
-  .instruction span {
-    font-size: 0.88rem;
-  }
-
-  .note-card {
-    width: min(92vw, 390px);
-    padding: 13px;
-    border-radius: 18px;
-  }
-
-  .cake {
-    transform: scale(0.92);
-  }
-
-  .happy21 {
-    font-size: 1.05rem;
-    top: -42px;
   }
 }
