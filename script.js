@@ -1,26 +1,31 @@
 const candle = document.getElementById("candle");
-const flame = document.getElementById("flame");
-const smoke = document.getElementById("smoke");
 const music = document.getElementById("music");
 const cake = document.getElementById("cake");
 const instruction = document.getElementById("instruction");
+const noteCard = document.getElementById("noteCard");
+const happy21 = document.getElementById("happy21");
 
-let blown = false;
+let clicked = false;
 
-function blowCandle() {
-  if (blown) return;
-  blown = true;
+function revealBirthday() {
+  if (clicked) return;
+  clicked = true;
 
-  flame.style.display = "none";
-  smoke.classList.remove("hidden");
-  cake.classList.add("blown");
-  instruction.textContent = "wish granted ✨";
-  instruction.classList.add("fade-out");
+  noteCard.classList.remove("hidden");
+  noteCard.classList.add("show-note");
+
+  happy21.classList.remove("hidden");
+  happy21.classList.add("show-happy");
+
+  cake.classList.add("glow");
+
+  instruction.innerHTML = `wish granted ✨<br><span>happy birthday</span>`;
+  instruction.classList.add("clicked-text");
 
   music.volume = 0.22;
   music.play().catch(() => {
-    instruction.textContent = "tap again for music ✨";
+    instruction.innerHTML = `wish granted ✨<br><span>tap again for music</span>`;
   });
 }
 
-candle.addEventListener("click", blowCandle);
+candle.addEventListener("click", revealBirthday);
