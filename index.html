@@ -4,28 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy Birthday</title>
+
+  <!-- 🔥 PREVIEW (IMPORTANT) -->
+  <meta property="og:title" content="open this :)" />
+  <meta property="og:description" content="✨" />
+  <meta property="og:image" content="https://eulCz.github.io/birthday-cake/preview.png" />
+  <meta property="og:type" content="website" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="stars"></div>
 
+  <!-- 🎵 MUSIC -->
   <audio id="music" autoplay loop>
     <source src="music.mp3" type="audio/mpeg" />
   </audio>
 
   <main class="container">
+
+    <!-- 💬 INSTRUCTION -->
     <p class="instruction" id="instruction">
-      blow the candle<br>
-      <span>(click it)</span>
+      make a wish<br>
+      <span>blow the candle (click it)</span>
     </p>
 
+    <!-- 🎂 CAKE -->
     <div class="cake-scene">
       <div class="cake-wrap">
+
+        <!-- TEXT ABOVE CAKE -->
         <div class="top-text">
           <div class="wish-text" id="wishText">wish granted ✨</div>
           <div class="happy21 hidden" id="happy21">happy 21 ✨</div>
         </div>
 
+        <!-- CAKE -->
         <div class="cake" id="cake">
           <div class="plate"></div>
 
@@ -37,16 +52,20 @@
           <div class="icing icing-2"></div>
           <div class="icing icing-3"></div>
 
+          <!-- 🕯️ CANDLE -->
           <div class="candle" id="candle">
             <div class="flame" id="flame"></div>
           </div>
         </div>
+
       </div>
     </div>
 
+    <!-- ✍️ HANDWRITING (HIDDEN FIRST) -->
     <div class="note-card hidden" id="noteCard">
       <img src="handwriting.png" alt="Handwritten birthday note" class="note" />
     </div>
+
   </main>
 
   <script src="script.js"></script>
